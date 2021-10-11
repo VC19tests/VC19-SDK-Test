@@ -1,0 +1,106 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('PATH_TO_YOUR_KEY_FILE')
+            storePassword 'YOUR_KEYSTORE_PASSWORD'
+            keyPassword 'YOUR_KEY_PASSWORD'
+            keyAlias 'YOUR_KEY_ALIAS'
+        }
+        release {
+            storeFile file('PATH_TO_YOUR_KEY_FILE')
+            storePassword 'YOUR_KEYSTORE_PASSWORD'
+            keyPassword 'YOUR_KEY_PASSWORD'
+            keyAlias 'YOUR_KEY_ALIAS'
+        }
+    }
+    compileSdkVersion Config.compileSdk
+
+    defaultConfig {
+        minSdkVersion Config.minSdk
+        targetSdkVersion Config.targetSdk
+        versionCode Config.versionCode
+        versionName Config.versionName
+
+        testInstrumentationRunner Config.androidTestInstrumentation
+        consumerProguardFiles Config.proguardConsumerRules
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "String", "BASE_URL", "\"https://get.dgc.gov.it/v1/dgc/\""
+            buildConfigField "String", "SERVER_HOST", "\"get.dgc.gov.it\""
+            buildConfigField "String", "CERTIFICATE_SHA", "\"sha256/7cZJIDPacG8FS3pq6Mvxg+7yBDM/VYc2alOcbVe/e74=\""
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled = true
+        sourceCompatibility Config.javaVersion
+        targetCompatibility Config.javaVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    libraryVariants.all { variant ->
+        variant.outputs.each { output ->
+            def lintTask = tasks["lint${variant.name.capitalize()}"]
+            output.assemble.dependsOn lintTask
+        }
+    }
+}
+
+dependencies {
+    implementation project(':decoder')
+    coreLibraryDesugaring Deps.desugar_jdk_libs
+ 
+    implementation Deps.kotlin_stdlib
+    implementation Deps.androidx_core
+    implementation Deps.androidx_appcompat
+    implementation Deps.androidx_material
+    implementation Deps.androidx_constraint
+    implementation Deps.androidx_navigation_fragment
+    implementation Deps.androidx_navigation_ui
+    implementation Deps.androidx_room_runtime
+    implementation Deps.androidx_worker_ktx
+    implementation Deps.kotlinx_coroutines
+    implementation Deps.zxing
+    implementation Deps.guava_conflict_resolver
+
+    implementation Deps.hilt
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    kapt Deps.hilt_compiler
+    implementation Deps.hilt_viewmodel
+    implementation Deps.hilt_work
+    kapt Deps.androidx_hilt_compiler
+    kapt Deps.androidx_room_compiler
+
+    implementation Deps.retrofit2
+    implementation Deps.log_interceptor
+    implementation Deps.gson_converter
+
+    implementation Deps.kotlin_reflect
+    implementation Deps.java_cose
+    implementation Deps.json_validation
+    implementation Deps.json_validation_rhino
+    implementation Deps.jackson_cbor
+    implementation Deps.bouncy_castle
+
+    testImplementation Deps.test_junit
+    testImplementation Deps.test_junit_jupiter_api
+    testImplementation Deps.test_junit_jupiter_params
+    testImplementation Deps.test_hamcrest
+    testRuntimeOnly Deps.test_runtime_only
+}
