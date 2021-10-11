@@ -36,3 +36,15 @@ project(':decoder').projectDir = new File("../dgca-app-core-android/decoder")
 
 You can find the required commits/changes [HERE](https://github.com/VC19bkp/it-dgc-verificaC19-android-SDKtest/commit/1c09aa810212afad1972bfe7a4c87af1369330a2).
 
+---------------------------------------------
+
+**Sample VC19 app built with SDK dependency (based on 1.1.2 release - develop-candidate branch)**
+
+- [VirusTotal Analysis](https://www.virustotal.com/gui/file/7c212e218647f4cbbadb24a752999ea339587ee42223e704ef4206a345ae184f)
+
+- [APKLab submission](https://apklab.io/apk.html?hash=7c212e218647f4cbbadb24a752999ea339587ee42223e704ef4206a345ae184f)
+
+- [Pithus Report](https://beta.pithus.org/report/7c212e218647f4cbbadb24a752999ea339587ee42223e704ef4206a345ae184f)
+
+- Built Universal APK
+[app-release_VC19_1.1.2_SDK_Test.zip](https://github.com/VC19tests/VC19-SDK-Test/files/7324467/app-release_VC19_1.1.2_SDK_Test.zip)
