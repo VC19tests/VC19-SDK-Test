@@ -20,7 +20,7 @@
  *  Created by climent on 6/7/21 6:46 PM
  */
 
-package it.ministerodellasalute.verificaC19sdk.ui.main.verification
+package it.ministerodellasalute.verificaC19sdk.model
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer

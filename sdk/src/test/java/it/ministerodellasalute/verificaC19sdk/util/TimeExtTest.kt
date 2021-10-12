@@ -20,7 +20,7 @@
  *  Created by climent on 6/14/21 1:49 PM
  */
 
-package it.ministerodellasalute.verificaC19sdk
+package it.ministerodellasalute.verificaC19sdk.util
 
 import org.junit.Assert
 import org.junit.Test
