@@ -19,6 +19,7 @@ android {
             keyAlias 'YOUR_KEY_ALIAS'
         }
     }
+    buildToolsVersion '28.0.3'
     compileSdkVersion Config.compileSdk
 
     defaultConfig {
@@ -37,7 +38,7 @@ android {
             buildConfigField "String", "SERVER_HOST", "\"testaka4.sogei.it\""
             buildConfigField "String", "CERTIFICATE_SHA", "\"sha256/R0d+cI8vTcJ3sCbpfQCH0OmdBbulPH3deYhngzOqJVA=\""
         }
-        
+
         release {
             buildConfigField "String", "BASE_URL", "\"https://get.dgc.gov.it/v1/dgc/\""
             buildConfigField "String", "SERVER_HOST", "\"get.dgc.gov.it\""
@@ -81,6 +82,7 @@ dependencies {
     implementation Deps.androidx_worker_ktx
     implementation Deps.kotlinx_coroutines
     implementation Deps.zxing
+    implementation Deps.zxing_core
     implementation Deps.guava_conflict_resolver
 
     implementation Deps.hilt
@@ -102,6 +104,7 @@ dependencies {
     implementation Deps.json_validation
     implementation Deps.json_validation_rhino
     implementation Deps.jackson_cbor
+    implementation Deps.jackson_datetype
     implementation Deps.bouncy_castle
 
     testImplementation Deps.test_junit
