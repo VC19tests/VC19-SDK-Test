@@ -109,4 +109,7 @@ dependencies {
     testImplementation Deps.test_junit_jupiter_params
     testImplementation Deps.test_hamcrest
     testRuntimeOnly Deps.test_runtime_only
+    testImplementation "io.mockk:mockk:1.11.0"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0'
 }
