@@ -38,6 +38,23 @@ You can find the required commits/changes [HERE](https://github.com/VC19bkp/it-d
 
 ---------------------------------------------
 
+**Sample VC19 app built with SDK dependency - based on 1.1.2 release - develop branch - OCT 12 commits**
+- **Lowered minSDK to API23**
+- Settings panel
+- Torch support
+- Main / Front-facing camera switch
+
+- [VirusTotal Analysis](https://www.virustotal.com/gui/file/7dc24ce1675c0f0f64abc1106c7ab2a4f07ac7a947bb67c456438bd2de943224)
+
+- [APKLab submission](https://apklab.io/apk.html?hash=7dc24ce1675c0f0f64abc1106c7ab2a4f07ac7a947bb67c456438bd2de943224)
+
+- [Pithus Report](https://beta.pithus.org/report/7dc24ce1675c0f0f64abc1106c7ab2a4f07ac7a947bb67c456438bd2de943224)
+
+- Built Universal APK
+[app-release_VC19_1.1.2_SDK_API23_01.zip](https://github.com/VC19tests/VC19-SDK-Test/files/7338787/app-release_VC19_1.1.2_SDK_API23_01.zip)
+
+---------------------------------------------
+
 **Sample VC19 app built with SDK dependency (based on 1.1.2 release - develop-candidate branch)**
 
 - [VirusTotal Analysis](https://www.virustotal.com/gui/file/7c212e218647f4cbbadb24a752999ea339587ee42223e704ef4206a345ae184f)
